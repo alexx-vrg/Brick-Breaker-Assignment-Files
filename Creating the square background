@@ -1,0 +1,25 @@
+#import turtle module
+import turtle
+
+# Create a turtle object
+background = turtle.Turtle()
+
+# Set the fill color to black
+background.fillcolor("black")
+
+# Draw a black square
+background.begin_fill()
+
+#move the starting position of the pen to draw the background
+background.penup()
+background.goto(-250,300)
+background.pendown
+
+#set a loop that will iterate 4 times to create the square
+for i in range(4):
+    background.forward(600)
+    background.right(90)
+background.end_fill()
+
+# Close the turtle graphics window when clicked
+turtle.done()
