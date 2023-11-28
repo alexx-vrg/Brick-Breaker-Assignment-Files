@@ -1,0 +1,37 @@
+#import turtle module
+import turtle
+
+# Create a turtle screen
+background = turtle.Screen()
+
+# Set the background color to black
+background.tracer(0)
+background.bgcolor("black")
+
+#create a boundary for the game
+boundary = turtle.Turtle()
+#set up the conditions of the boundary
+boundary.color("blue")
+boundary.speed(0)
+
+#move the starting position of the pen to draw the background
+boundary.penup()
+boundary.goto(-800,450)
+boundary.pendown()
+
+# Draw a black square
+boundary.begin_fill()
+
+#set a loop that will iterate 4 times to create the square
+for i in range(2):
+    boundary.forward(1600)
+    boundary.right(90)
+    boundary.forward(900)
+    boundary.right(90)
+boundary.end_fill()
+boundary.ht()
+
+background.update()
+
+# Close the turtle graphics window when clicked
+turtle.done()
