@@ -12,12 +12,14 @@ background.begin_fill()
 
 #move the starting position of the pen to draw the background
 background.penup()
-background.goto(-250,300)
+background.goto(-800,450)
 background.pendown
 
 #set a loop that will iterate 4 times to create the square
-for i in range(4):
-    background.forward(600)
+for i in range(2):
+    background.forward(1600)
+    background.right(90)
+    background.forward(900)
     background.right(90)
 background.end_fill()
 
