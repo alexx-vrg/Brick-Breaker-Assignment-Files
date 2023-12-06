@@ -1,6 +1,9 @@
 import turtle
 from turtle import Turtle
 
+#we start by setting the move distance outside of the class indent
+move_dist = 10
+
 class Ball(Turtle):
     def ball(ball):
         super().__init__() #we want to retrieve all properties from the master class so we use the super() function, and intit() applies is to the ball
@@ -8,8 +11,8 @@ class Ball(Turtle):
         ball.colour('white') #set the colour of the ball to white bc the screen bg colour is black
 
 #because the screen is set on a x,y space, we need to define the movement of the ball according to the x and y axis:
-        ball.move_dist_x = 10
-        ball.move_dist_y = 10 #the moving distance on both x and y every time the ball moves is 10 steps
+        ball.move_dist_x = move_dist
+        ball.move_dist_y = move_dist #the moving distance on both x and y every time the ball moves is 10 steps
         ball.goto(-50, 300) #we set the INITIAL POSITION of the ball (change selon screen)
         ball.reset() #the ball is ready to be in the game
 
