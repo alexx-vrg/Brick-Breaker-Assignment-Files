@@ -16,9 +16,10 @@ def move_paddle_left():
 def move_paddle_right():
     paddle_instance.move_right()
 
-
+#import the ball variable and create a function for it
 from ball import Ball
-ball_instance = Ball()
+ball_instance = Ball(paddle_instance)
+ball_instance.start()
 
 # Create a turtle screen
 background = turtle.Screen()
@@ -59,8 +60,10 @@ background.listen()
 background.onkey(move_paddle_left, "Left")
 background.onkey(move_paddle_right, "Right")
 
-#continuously refresh the screen
+#continuously refresh the screen and make the ball move
 while True:
+    ball_instance.movement()  # Call the movement method to update ball position
+    background.update()
     background.update()
 
 # Close the turtle graphics window when clicked
