@@ -5,7 +5,7 @@ from turtle import Turtle
 move_dist = 10
 
 class Ball(Turtle):
-    def ball(ball):
+    def __init__(ball):
         super().__init__() #we want to retrieve all properties from the master class so we use the super() function, and intit() applies is to the ball
         ball.shape('circle') #set the shape of the ball to a circle
         ball.colour('white') #set the colour of the ball to white bc the screen bg colour is black
