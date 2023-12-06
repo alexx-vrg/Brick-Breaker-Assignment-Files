@@ -1,4 +1,4 @@
-import turtle
+"""import turtle
 from turtle import Turtle
 
 #we start by setting the move distance outside of the class indent
@@ -34,5 +34,32 @@ class Ball(Turtle):
 #we start a new block to reset the ball's position every time the game starts or restarts:
         def reset(ball):
              ball.goto(x= 50, y= 820)
-             ball.move_dist_y = 10
+             ball.move_dist_y = 10"""
         
+import turtle
+from turtle import Turtle
+
+class Ball(Turtle):
+    def __init__(self):
+        super().__init__()  
+        self.shape('circle')
+        self.penup()
+        self.color('white')  # Set the color to white
+        self.goto(0, -150)
+        self.move_dist_x = 10
+        self.move_dist_y = 10
+        self.move_speed = 0.05
+
+    def movement(self):
+        # Move the ball according to the x and y axis
+        new_x = self.xcor() + self.move_dist_x
+        new_y = self.ycor() + self.move_dist_y
+        self.goto(new_x, new_y)
+
+    def reset_position(self):
+        # Reset the ball's position to the initial position
+        self.goto(-50, 300)
+
+    def start(self):
+        # Add any initialization logic needed when the game starts or restarts
+        pass
