@@ -21,10 +21,15 @@ class Ball(Turtle):
 
 
 #we start a new block to study the case in which the ball bounces on a brick, on a boundary/wall, or on the paddle:
-#    def bounce(ball):
-#        #we start an if loop for if the ball meets an object:
-#        if 
-
+        def bounce(ball, x_bounce, y_bounce):
+       #we start an if loop for if the ball meets an object:
+                if x_bounce:
+                     ball.move_dist_x *=-1
+                elif y_bounce:
+                      ball.move_dist_y *=-1
+        
 #we start a new block to reset the ball's position every time the game starts or restarts:
-#    def start(ball):
+        def reset(ball):
+             ball.goto(x= 50, y= 820)
+             ball.move_dist_y = 10
         
