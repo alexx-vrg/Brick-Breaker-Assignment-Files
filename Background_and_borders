@@ -3,6 +3,13 @@ import turtle
 #import the bricks creation function
 from Bricks_function import create_bricks
 
+
+screen.listen()
+screen.onkey(key='Left', fun=paddle.move_left)
+screen.onkey(key='Right', fun=paddle.move_right)
+screen.onkey(key='space', fun=pause_game)
+
+
 # Create a turtle screen
 background = turtle.Screen()
 
