@@ -3,12 +3,22 @@ import turtle
 #import the bricks creation function
 from Bricks_function import create_bricks
 
+#import the paddle variable and create a function for it
+from Paddle import Paddle
 
-screen.listen()
-screen.onkey(key='Left', fun=paddle.move_left)
-screen.onkey(key='Right', fun=paddle.move_right)
-screen.onkey(key='space', fun=pause_game)
+paddle_instance = Paddle()
 
+# Function to move the paddle to the left
+def move_paddle_left():
+    paddle_instance.move_left()
+
+# Function to move the paddle to the right
+def move_paddle_right():
+    paddle_instance.move_right()
+
+
+from ball import Ball
+ball_instance = Ball()
 
 # Create a turtle screen
 background = turtle.Screen()
@@ -43,6 +53,15 @@ boundary.ht()
 create_bricks()
 
 background.update()
+
+#make the turtle look at user input
+background.listen()
+background.onkey(move_paddle_left, "Left")
+background.onkey(move_paddle_right, "Right")
+
+#continuously refresh the screen
+while True:
+    background.update()
 
 # Close the turtle graphics window when clicked
 turtle.done()
