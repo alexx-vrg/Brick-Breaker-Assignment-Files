@@ -6,7 +6,7 @@ from interface import Interface as I
 from bricks import Bricks
 import time
 
-# creating a black background
+# Creating a black background
 background = tr.Screen()
 background.setup(width=1200, height=600)
 background.bgcolor('black')
