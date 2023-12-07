@@ -19,7 +19,7 @@ background.tracer(0)
 Interface = I()
 Interface.header()
 
-score = Score(lives=15)
+score = Score(lives=4)
 paddle = Paddle()
 bricks = Bricks()
 ball = Ball()
