@@ -1,3 +1,7 @@
-from bricks import bricks
-from paddle import paddle
-from ball import ball
+import turtle as tr
+from paddle import Paddle
+from ball import Ball
+from score import Score
+from interface import Interface as I
+from bricks import Bricks
+import time
