@@ -1,38 +1,20 @@
 from turtle import Turtle
 
-MOVE_DIST = 20
-LEFT_BOUNDARY = -800
-RIGHT_BOUNDARY = 800
+
+MOVE_DIST = 70
+
 
 class Paddle(Turtle):
-    def __init__(self):
-        super().__init__()
-        self.color('steel blue')
-        self.shape('square')
-        self.penup()
-        self.shapesize(stretch_wid=1, stretch_len=5)
-        self.goto(x=0, y=-280)
-# Register key events
-        self.screen.listen()
-        self.screen.onkeypress(self.move_left, "Left")
-        self.screen.onkeypress(self.move_right, "Right")
+	def __init__(self):
+		super().__init__()
+		self.color('steel blue')
+		self.shape('square')
+		self.penup()
+		self.shapesize(stretch_wid=1, stretch_len=10)
+		self.goto(x=0, y=-280)
 
-    def move_left(self):
-        new_x = self.xcor() - MOVE_DIST
-        if new_x > LEFT_BOUNDARY:
-            self.goto(new_x, self.ycor())
+	def move_left(self):
+		self.backward(MOVE_DIST)
 
-    def move_right(self):
-        new_x = self.xcor() + MOVE_DIST
-        if new_x < RIGHT_BOUNDARY:
-            self.goto(new_x, self.ycor())
-
-    def continuous_move(self):
-        # Check if the left or right key is held down, and move accordingly
-        if self.screen.iskeypressed("Left"):
-            self.move_left()
-        if self.screen.iskeypressed("Right"):
-            self.move_right()
-
-        # Schedule the continuous_move method to run again after a short delay
-        self.screen.ontimer(self.continuous_move, 50)
+	def move_right(self):
+		self.forward(MOVE_DIST)
