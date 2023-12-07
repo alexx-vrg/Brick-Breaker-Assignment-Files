@@ -83,7 +83,7 @@ def check_collision_with_paddle():
 	paddle_x = paddle.xcor()
 	ball_x = ball.xcor()
 
-	# check if the ball's distance (from its middle) from the paddle (from its middle) is less than
+	# check if the ball's distance (from its middle) from the paddle (from its middle) is less than \
 	# the width of the paddle and the ball is below a certain coordinate to detect their collision
 	if ball.distance(paddle) < 110 and ball.ycor() < -250:
 
