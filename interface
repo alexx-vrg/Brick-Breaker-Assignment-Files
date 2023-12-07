@@ -5,12 +5,10 @@ import random
 FONT = ("Helvetica", 50, "normal")
 ALIGNMENT = 'center'
 COLOR = "white"
-COLOR_LIST = ['light blue', 'royal blue', 
-			'light steel blue', 'steel blue',
-			'light cyan', 'light sky blue', 
-			'violet', 'salmon', 'tomato',
-			'sandy brown', 'purple', 'deep pink', 
-			'medium sea green', 'khaki']
+COLOR_LIST = ['light blue', 'royal blue', 'light steel blue',
+			'light cyan', 'light sky blue', 'violet',
+			'salmon', 'tomato','sandy brown',
+			'purple', 'deep pink', 'medium sea green', 'khaki']
 
 
 class Interface(Turtle):
@@ -38,4 +36,3 @@ class Interface(Turtle):
 			self.write('You won!', align=ALIGNMENT, font=FONT)
 		else:
 			self.write("Game Over", align=ALIGNMENT, font=FONT)
-
