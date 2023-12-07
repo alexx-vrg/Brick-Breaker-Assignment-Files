@@ -22,17 +22,17 @@ Interface.header()
 score = Score(lives=15)
 paddle = Paddle()
 bricks = Bricks()
-
-
 ball = Ball()
 
 playing_game = True
+
 # Use the left and right keys to move the paddle
 background.listen()
 background.onkey(key='Left', fun=paddle.move_left)
 background.onkey(key='Right', fun=paddle.move_right)
 
-# Use th pre-existing modules to check collision
+
+# Use the pre-existing modules to check collision
 
 
 def check_collision_with_walls():
@@ -40,18 +40,23 @@ def check_collision_with_walls():
 	global ball, score, playing_game, Interface
 
 	# Collision detection with left and right walls:
-	if ball.xcor() < -580 or ball.xcor() > 570:
+	if ball.xcor() < -580:
+		ball.sety(-580)
+		ball.bounce(x_bounce=True, y_bounce=False)
+
+	if ball.xcor() > 570:
+		ball.sety(570)
 		ball.bounce(x_bounce=True, y_bounce=False)
 		return
 
 	# collision detection with upper wall
 	if ball.ycor() > 280:
+		ball.sety(280)
 		ball.bounce(x_bounce=False, y_bounce=True)
 		return
 
 	# Collision detection with bottom wall
-	# In this case, user failed to hit the ball 
-	# thus he loses. The game resets.
+	# In this case, the user fails to hit the ball thus he loses, and the game resets
 	if ball.ycor() < -280:
 		ball.reset()
 		score.decrease_lives()
