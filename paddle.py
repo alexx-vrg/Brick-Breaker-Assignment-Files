@@ -1,7 +1,7 @@
 from turtle import Turtle
 
 #set up the move distance of the paddle as well as its boundaries
-MOVE_DIST = 50
+MOVE_DIST = 60
 LEFT_BOUNDARY = -800
 RIGHT_BOUNDARY = 800
 
