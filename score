@@ -1,9 +1,11 @@
+#the code below is responsble for handling the score of the brick breaker game
 from turtle import Turtle
-
+#if a file does not exist, it creates a new file and initiates it to zero
 try:
 	score = int(open('highestScore.txt', 'r').read())
 except FileNotFoundError:
 	score = open('highestScore.txt', 'w').write(str(0))
+#if the file contains an invalid value, it resets to zero
 except ValueError:
 	score = 0
 FONT = ('arial', 20, 'normal')
