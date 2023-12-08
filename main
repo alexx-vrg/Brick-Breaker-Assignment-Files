@@ -41,17 +41,14 @@ def check_collision_with_walls():
 
 	# Collision detection with left and right walls:
 	if ball.xcor() < -580:
-		ball.sety(-580)
 		ball.bounce(x_bounce=True, y_bounce=False)
 
 	if ball.xcor() > 570:
-		ball.sety(570)
 		ball.bounce(x_bounce=True, y_bounce=False)
 		return
 
 	# collision detection with upper wall
 	if ball.ycor() > 280:
-		ball.sety(280)
 		ball.bounce(x_bounce=False, y_bounce=True)
 		return
 
